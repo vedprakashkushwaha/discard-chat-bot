@@ -1,4 +1,4 @@
-FROM amd64/node
+FROM node:20
 
 WORKDIR /usr/src/app
 
@@ -9,4 +9,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-CMD [ "node", "node --env-file .env index.js" ]
+CMD [ "node", "--env-file", ".env", "index.js" ]
+
